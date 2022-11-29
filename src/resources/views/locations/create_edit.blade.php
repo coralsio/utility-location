@@ -35,7 +35,7 @@
             <div class="col-md-4">
                 @php $locationTypes = \Settings::get('utility_location_types',[]); @endphp
 
-                {!! CoralsForm::select('module','Utility::attributes.tag.module', \Utility::getUtilityModules()) !!}
+                {!! CoralsForm::select('module','Utility::attributes.module', \Utility::getUtilityModules()) !!}
                 {!! CoralsForm::radio('status','Corals::attributes.status', true, trans('Corals::attributes.status_options')) !!}
 
                 {!! CoralsForm::select('type', 'utility-location::attributes.location.type', $locationTypes , false) !!}
