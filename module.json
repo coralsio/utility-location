@@ -1,0 +1,16 @@
+{
+    "code": "corals-utility-location",
+    "name": "Utility Location",
+    "author": "Corals",
+    "type": "module",
+    "description": "Utility Locations",
+    "namespace": "Corals\\Modules\\Utility\\Location",
+    "provider": "UtilityLocationServiceProvider",
+    "version": "1.0",
+    "load_order": "0",
+    "folder": "utility-location",
+    "icon": "fa fa-map-o",
+    "require": {
+        "corals-utility": "^4.0"
+    }
+}
