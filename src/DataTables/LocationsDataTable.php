@@ -57,13 +57,14 @@ class LocationsDataTable extends BaseDataTable
         return [
             'delete' => ['title' => trans('Corals::labels.delete'), 'permission' => 'Utility::location.delete', 'confirmation' => trans('Corals::labels.confirmation.title')],
             'active' => ['title' => '<i class="fa fa-check-circle"></i> ' . trans('Corals::attributes.status_options.active'), 'permission' => 'Utility::location.update', 'confirmation' => trans('Corals::labels.confirmation.title')],
-            'inActive' => ['title' => '<i class="fa fa-check-circle-o"></i> ' . trans('Corals::attributes.status_options.inactive'), 'permission' => 'Utility::location.update', 'confirmation' => trans('Corals::labels.confirmation.title')]
+            'inActive' => ['title' => '<i class="fa fa-check-circle-o"></i> ' . trans('Corals::attributes.status_options.inactive'), 'permission' => 'Utility::location.update', 'confirmation' => trans('Corals::labels.confirmation.title')],
         ];
     }
 
     protected function getOptions()
     {
         $url = url(config('utility-location.models.location.resource_url'));
+
         return ['resource_url' => $url];
     }
 }

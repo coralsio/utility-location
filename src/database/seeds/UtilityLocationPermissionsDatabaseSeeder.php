@@ -3,7 +3,6 @@
 namespace Corals\Modules\Utility\Location\database\seeds;
 
 use Carbon\Carbon;
-use Corals\User\Models\Role;
 use Illuminate\Database\Seeder;
 
 class UtilityLocationPermissionsDatabaseSeeder extends Seeder

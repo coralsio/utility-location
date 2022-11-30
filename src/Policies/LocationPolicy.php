@@ -19,6 +19,7 @@ class LocationPolicy extends BasePolicy
         if ($user->can('Utility::location.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -41,6 +42,7 @@ class LocationPolicy extends BasePolicy
         if ($user->can('Utility::location.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -54,6 +56,7 @@ class LocationPolicy extends BasePolicy
         if ($user->can('Utility::location.delete')) {
             return true;
         }
+
         return false;
     }
 }

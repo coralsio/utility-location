@@ -7,10 +7,11 @@ use Corals\Foundation\Transformers\PresentableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-
 class Location extends BaseModel
 {
-    use PresentableTrait, LogsActivity, Sluggable;
+    use PresentableTrait;
+    use LogsActivity;
+    use Sluggable;
 
     protected $table = 'utility_locations';
 
@@ -23,7 +24,7 @@ class Location extends BaseModel
     protected $guarded = ['id'];
 
     protected $casts = [
-        'properties' => 'json'
+        'properties' => 'json',
     ];
 
     public function scopeActive($query)
@@ -35,8 +36,8 @@ class Location extends BaseModel
     {
         return [
             'slug' => [
-                'source' => 'name'
-            ]
+                'source' => 'name',
+            ],
         ];
     }
 }

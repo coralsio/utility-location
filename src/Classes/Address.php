@@ -2,7 +2,6 @@
 
 namespace Corals\Modules\Utility\Location\Classes;
 
-
 use Corals\Modules\Utility\Location\Models\Location;
 
 class Address
@@ -56,7 +55,7 @@ class Address
         if ($status) {
             $locationsCount = $locationsCount->where('status', $status);
         }
+
         return $locationsCount->count();
     }
-
 }

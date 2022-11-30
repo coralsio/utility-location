@@ -3,10 +3,10 @@
 namespace Corals\Modules\Utility\Location\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
+use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Utility\Category\Models\Category;
 use Corals\Modules\Utility\Location\DataTables\LocationsDataTable;
 use Corals\Modules\Utility\Location\Http\Requests\LocationRequest;
-use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Utility\Location\Models\Location;
 use Corals\Modules\Utility\Location\Services\LocationService;
 use Illuminate\Http\Request;
@@ -113,11 +113,9 @@ class LocationsController extends BaseController
      * @param Location $location
      * @return \Illuminate\Http\JsonResponse
      */
-
     public function bulkAction(BulkRequest $request)
     {
         try {
-
             $action = $request->input('action');
             $selection = json_decode($request->input('selection'), true);
 
@@ -125,19 +123,20 @@ class LocationsController extends BaseController
                 case 'delete':
                     foreach ($selection as $selection_id) {
                         $location = Location::findByHash($selection_id);
-                        $location_request = new LocationRequest;
+                        $location_request = new LocationRequest();
                         $location_request->setMethod('DELETE');
                         $this->destroy($location_request, $location);
                     }
                     $message = ['level' => 'success', 'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])];
+
                     break;
 
-                case 'active' :
+                case 'active':
                     foreach ($selection as $selection_id) {
                         $location = Location::findByHash($selection_id);
                         if (user()->can('Utility::location.update')) {
                             $location->update([
-                                'status' => 'active'
+                                'status' => 'active',
                             ]);
                             $location->save();
                             $message = ['level' => 'success', 'message' => trans('utility-location::attributes.update_status', ['item' => $this->title_singular])];
@@ -145,14 +144,15 @@ class LocationsController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('utility-location::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
 
-                case 'inActive' :
+                case 'inActive':
                     foreach ($selection as $selection_id) {
                         $location = Location::findByHash($selection_id);
                         if (user()->can('Utility::location.update')) {
                             $location->update([
-                                'status' => 'inactive'
+                                'status' => 'inactive',
                             ]);
                             $location->save();
                             $message = ['level' => 'success', 'message' => trans('utility-location::attributes.update_status', ['item' => $this->title_singular])];
@@ -160,10 +160,9 @@ class LocationsController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('utility-location::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
             }
-
-
         } catch (\Exception $exception) {
             log_exception($exception, Category::class, 'bulkAction');
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
@@ -193,13 +192,11 @@ class LocationsController extends BaseController
     public function getLocationTypeChildren(Request $request)
     {
         try {
-
             return $this->locationService->getLocationTypeChildren($request);
-
         } catch (\Exception $exception) {
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
-            return response()->json($message);
 
+            return response()->json($message);
         }
     }
 }
