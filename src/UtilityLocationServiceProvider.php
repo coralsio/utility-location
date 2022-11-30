@@ -2,10 +2,10 @@
 
 namespace Corals\Modules\Utility\Location;
 
-use Corals\Modules\Utility\Location\Providers\UtilityAuthServiceProvider;
-use Corals\Modules\Utility\Location\Providers\UtilityRouteServiceProvider;
 use Corals\Modules\Utility\Location\Facades\Address;
 use Corals\Modules\Utility\Location\Models\Location;
+use Corals\Modules\Utility\Location\Providers\UtilityAuthServiceProvider;
+use Corals\Modules\Utility\Location\Providers\UtilityRouteServiceProvider;
 use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Database\Eloquent\Relations\Relation;

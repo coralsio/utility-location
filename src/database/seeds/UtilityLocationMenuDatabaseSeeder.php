@@ -28,7 +28,7 @@ class UtilityLocationMenuDatabaseSeeder extends Seeder
                     'icon' => 'fa fa-map-o',
                     'target' => null,
                     'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
             ]
         );

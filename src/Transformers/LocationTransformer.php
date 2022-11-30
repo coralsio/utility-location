@@ -35,7 +35,7 @@ class LocationTransformer extends BaseTransformer
             'status' => formatStatusAsLabels($location->status),
             'created_at' => format_date($location->created_at),
             'updated_at' => format_date($location->updated_at),
-            'action' => $this->actions($location)
+            'action' => $this->actions($location),
         ];
 
         return parent::transformResponse($transformedArray);

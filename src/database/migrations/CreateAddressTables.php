@@ -2,8 +2,8 @@
 
 namespace Corals\Modules\Utility\Location\database\migrations;
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateAddressTables extends Migration
 {
@@ -14,7 +14,8 @@ class CreateAddressTables extends Migration
 
             $table->string('name');
             $table->string('lat')->nullable();
-            $table->string('long')->nullable();;
+            $table->string('long')->nullable();
+            ;
             $table->string('zip')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();

@@ -23,7 +23,6 @@ class UtilityLocationTest extends TestCase
             $query->where('name', 'superuser');
         })->first();
         Auth::loginUsingId($user->id);
-
     }
 
     public function test_utility_location_store()
@@ -70,7 +69,7 @@ class UtilityLocationTest extends TestCase
             }
         }
 
-        if (!$active) {
+        if (! $active) {
             $location = array_rand($locations);
             $response = $this->post('utilities/address/locations', [
                 "name" => $location,
@@ -96,7 +95,6 @@ class UtilityLocationTest extends TestCase
                 "long" => $this->location->long,
             ]);
         }
-
     }
 
     public function test_utility_location_edit()
@@ -155,7 +153,7 @@ class UtilityLocationTest extends TestCase
                 "address" => $this->location->address,
                 "lat" => $this->location->lat,
                 "long" => $this->location->long,
-                "status" => $this->location->status]);
+                "status" => $this->location->status, ]);
         }
         $this->assertTrue(true);
     }

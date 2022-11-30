@@ -41,6 +41,7 @@ class LocationsController extends APIBaseController
     {
         try {
             $location = $this->locationService->store($request, Location::class);
+
             return apiResponse($this->locationService->getModelDetails(), trans('Corals::messages.success.created', ['item' => $location->name]));
         } catch (\Exception $exception) {
             return apiExceptionResponse($exception);
