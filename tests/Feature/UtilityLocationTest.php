@@ -43,10 +43,10 @@ class UtilityLocationTest extends TestCase
                 $active = true;
                 $location = array_rand($locations);
                 $response = $this->post('utilities/address/locations', [
-                    "name" => $location,
-                    "slug" => $location,
+                    "name" => $locations[$location],
+                    "slug" => $locations[$location],
                     "module" => $module,
-                    "address" => $location,
+                    "address" => $locations[$location],
                     "lat" => random_int(50, 500),
                     "long" => random_int(50, 500),
                     "status" => "active",
@@ -73,9 +73,9 @@ class UtilityLocationTest extends TestCase
         if (!$active) {
             $location = array_rand($locations);
             $response = $this->post('utilities/address/locations', [
-                "name" => $location,
-                "slug" => $location,
-                "address" => $location,
+                "name" => $locations[$location],
+                "slug" => $locations[$location],
+                "address" => $locations[$location],
                 "lat" => random_int(50, 500),
                 "long" => random_int(50, 500),
                 "status" => "active",
@@ -148,6 +148,7 @@ class UtilityLocationTest extends TestCase
 
             $response->assertStatus(200)->assertSeeText('Location has been deleted successfully.');
 
+            $this->isSoftDeletableModel(Location::class);
             $this->assertDatabaseMissing('utility_locations', [
                 "name" => $this->location->name,
                 "slug" => $this->location->slug,
