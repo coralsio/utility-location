@@ -2,6 +2,7 @@
 
 namespace Corals\Modules\Utility\Location;
 
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Utility\Location\Facades\Address;
 use Corals\Modules\Utility\Location\Models\Location;
 use Corals\Modules\Utility\Location\Providers\UtilityAuthServiceProvider;
@@ -10,11 +11,15 @@ use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
 
-class UtilityLocationServiceProvider extends ServiceProvider
+class UtilityLocationServiceProvider extends BasePackageServiceProvider
 {
-    public function boot()
+    /**
+     * @var
+     */
+    protected $packageCode = 'corals-utility-location';
+
+    public function bootPackage()
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'utility-location');
         $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'utility-location');
@@ -30,11 +35,9 @@ class UtilityLocationServiceProvider extends ServiceProvider
 
         $this->registerMorphMaps();
         $this->registerCustomFieldsModels();
-
-        $this->registerModulesPackages();
     }
 
-    public function register()
+    public function registerPackage()
     {
         $this->app->register(UtilityAuthServiceProvider::class);
         $this->app->register(UtilityRouteServiceProvider::class);
@@ -57,7 +60,7 @@ class UtilityLocationServiceProvider extends ServiceProvider
         Settings::addCustomFieldModel(Location::class, 'Location (Utility)');
     }
 
-    protected function registerModulesPackages()
+    public function registerModulesPackages()
     {
         Modules::addModulesPackages('corals/utility-location');
     }
