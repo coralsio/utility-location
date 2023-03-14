@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use Corals\Utility\Location\Models\Location;
 use Corals\Settings\Facades\Modules;
 use Corals\User\Models\User;
+use Corals\Utility\Location\Models\Location;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;

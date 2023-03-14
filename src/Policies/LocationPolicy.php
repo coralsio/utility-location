@@ -3,8 +3,8 @@
 namespace Corals\Utility\Location\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\Utility\Location\Models\Location;
 use Corals\User\Models\User;
+use Corals\Utility\Location\Models\Location;
 
 class LocationPolicy extends BasePolicy
 {

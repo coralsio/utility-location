@@ -3,12 +3,12 @@
 namespace Corals\Utility\Location;
 
 use Corals\Foundation\Providers\BasePackageServiceProvider;
+use Corals\Settings\Facades\Modules;
+use Corals\Settings\Facades\Settings;
 use Corals\Utility\Location\Facades\Address;
 use Corals\Utility\Location\Models\Location;
 use Corals\Utility\Location\Providers\UtilityAuthServiceProvider;
 use Corals\Utility\Location\Providers\UtilityRouteServiceProvider;
-use Corals\Settings\Facades\Modules;
-use Corals\Settings\Facades\Settings;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\AliasLoader;
 
