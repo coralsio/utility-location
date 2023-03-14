@@ -1,6 +1,6 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Facades;
+namespace Corals\Utility\Location\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Address extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Corals\Modules\Utility\Location\Classes\Address::class;
+        return \Corals\Utility\Location\Classes\Address::class;
     }
 }

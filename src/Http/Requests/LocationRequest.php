@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Http\Requests;
+namespace Corals\Utility\Location\Http\Requests;
 
 use Corals\Foundation\Http\Requests\BaseRequest;
-use Corals\Modules\Utility\Location\Models\Location;
+use Corals\Utility\Location\Models\Location;
 
 class LocationRequest extends BaseRequest
 {

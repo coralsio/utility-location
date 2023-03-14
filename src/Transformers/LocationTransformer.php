@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Transformers;
+namespace Corals\Utility\Location\Transformers;
 
 use Corals\Foundation\Transformers\BaseTransformer;
-use Corals\Modules\Utility\Location\Models\Location;
+use Corals\Utility\Location\Models\Location;
 
 class LocationTransformer extends BaseTransformer
 {

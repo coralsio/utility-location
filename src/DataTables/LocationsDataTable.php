@@ -1,10 +1,10 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\DataTables;
+namespace Corals\Utility\Location\DataTables;
 
 use Corals\Foundation\DataTables\BaseDataTable;
-use Corals\Modules\Utility\Location\Models\Location;
-use Corals\Modules\Utility\Location\Transformers\LocationTransformer;
+use Corals\Utility\Location\Models\Location;
+use Corals\Utility\Location\Transformers\LocationTransformer;
 use Yajra\DataTables\EloquentDataTable;
 
 class LocationsDataTable extends BaseDataTable

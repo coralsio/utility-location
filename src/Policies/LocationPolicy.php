@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Policies;
+namespace Corals\Utility\Location\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\Modules\Utility\Location\Models\Location;
+use Corals\Utility\Location\Models\Location;
 use Corals\User\Models\User;
 
 class LocationPolicy extends BasePolicy

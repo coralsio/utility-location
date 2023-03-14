@@ -1,8 +1,8 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Classes;
+namespace Corals\Utility\Location\Classes;
 
-use Corals\Modules\Utility\Location\Models\Location;
+use Corals\Utility\Location\Models\Location;
 
 class Address
 {

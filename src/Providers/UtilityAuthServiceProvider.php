@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Providers;
+namespace Corals\Utility\Location\Providers;
 
-use Corals\Modules\Utility\Location\Models\Location;
-use Corals\Modules\Utility\Location\Policies\LocationPolicy;
+use Corals\Utility\Location\Models\Location;
+use Corals\Utility\Location\Policies\LocationPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class UtilityAuthServiceProvider extends ServiceProvider

@@ -1,6 +1,6 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\database\seeds;
+namespace Corals\Utility\Location\database\seeds;
 
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;

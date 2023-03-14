@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Services;
+namespace Corals\Utility\Location\Services;
 
 use Corals\Foundation\Services\BaseServiceClass;
-use Corals\Modules\Utility\Location\Facades\Address;
+use Corals\Utility\Location\Facades\Address;
 use Illuminate\Http\Request;
 
 class LocationService extends BaseServiceClass

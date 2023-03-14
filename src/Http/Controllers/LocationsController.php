@@ -1,14 +1,14 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Http\Controllers;
+namespace Corals\Utility\Location\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
 use Corals\Foundation\Http\Requests\BulkRequest;
-use Corals\Modules\Utility\Category\Models\Category;
-use Corals\Modules\Utility\Location\DataTables\LocationsDataTable;
-use Corals\Modules\Utility\Location\Http\Requests\LocationRequest;
-use Corals\Modules\Utility\Location\Models\Location;
-use Corals\Modules\Utility\Location\Services\LocationService;
+use Corals\Utility\Category\Models\Category;
+use Corals\Utility\Location\DataTables\LocationsDataTable;
+use Corals\Utility\Location\Http\Requests\LocationRequest;
+use Corals\Utility\Location\Models\Location;
+use Corals\Utility\Location\Services\LocationService;
 use Illuminate\Http\Request;
 
 class LocationsController extends BaseController

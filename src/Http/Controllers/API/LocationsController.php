@@ -1,13 +1,13 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Http\Controllers\API;
+namespace Corals\Utility\Location\Http\Controllers\API;
 
 use Corals\Foundation\Http\Controllers\APIBaseController;
-use Corals\Modules\Utility\Location\DataTables\LocationsDataTable;
-use Corals\Modules\Utility\Location\Http\Requests\LocationRequest;
-use Corals\Modules\Utility\Location\Models\Location;
-use Corals\Modules\Utility\Location\Services\LocationService;
-use Corals\Modules\Utility\Location\Transformers\API\LocationPresenter;
+use Corals\Utility\Location\DataTables\LocationsDataTable;
+use Corals\Utility\Location\Http\Requests\LocationRequest;
+use Corals\Utility\Location\Models\Location;
+use Corals\Utility\Location\Services\LocationService;
+use Corals\Utility\Location\Transformers\API\LocationPresenter;
 
 class LocationsController extends APIBaseController
 {

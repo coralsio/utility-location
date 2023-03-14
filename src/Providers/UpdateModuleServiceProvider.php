@@ -1,6 +1,6 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Providers;
+namespace Corals\Utility\Location\Providers;
 
 use Corals\Foundation\Providers\BaseUpdateModuleServiceProvider;
 

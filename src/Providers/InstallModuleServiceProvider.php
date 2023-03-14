@@ -1,10 +1,10 @@
 <?php
 
-namespace Corals\Modules\Utility\Location\Providers;
+namespace Corals\Utility\Location\Providers;
 
 use Corals\Foundation\Providers\BaseInstallModuleServiceProvider;
-use Corals\Modules\Utility\Location\database\migrations\CreateAddressTables;
-use Corals\Modules\Utility\Location\database\seeds\UtilityLocationDatabaseSeeder;
+use Corals\Utility\Location\database\migrations\CreateAddressTables;
+use Corals\Utility\Location\database\seeds\UtilityLocationDatabaseSeeder;
 
 class InstallModuleServiceProvider extends BaseInstallModuleServiceProvider
 {

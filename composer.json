@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Corals\\Modules\\Utility\\Location\\": "src"
+            "Corals\\Utility\\Location\\": "src"
         }
     },
     "autoload-dev": {
@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Corals\\Modules\\Utility\\Location\\UtilityLocationServiceProvider"
+                "Corals\\Utility\\Location\\UtilityLocationServiceProvider"
             ]
         }
     },
