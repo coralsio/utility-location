@@ -43,5 +43,8 @@
             ]
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "cviebrock/eloquent-sluggable": "dev-master"
+    }
 }
