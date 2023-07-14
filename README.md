@@ -4,7 +4,7 @@ Locations tool is utilizing Google geolocation to define locations in your syste
 
 when creating the location you will be prompted to enter the module that is related to that locations.
 
-<p><img src="https://www.laraship.com/wp-content/uploads/2018/07/utility_locations.png" alt="" width="1638" height="914"></p>
+<p><img src="https://www.laraship.com/wp-content/uploads/2018/07/utility_locations.png" alt="" ></p>
 <p>&nbsp;</p>
 
 you need to enter google address API key under settings utilities
