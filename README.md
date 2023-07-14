@@ -9,7 +9,7 @@ when creating the location you will be prompted to enter the module that is rela
 
 you need to enter google address API key under settings utilities
 
-<p><img src="https://www.laraship.com/wp-content/uploads/2018/07/utilities_google_api_key.png" alt="" width="1638" height="303"></p>
+<p><img src="https://www.laraship.com/wp-content/uploads/2018/07/utilities_google_api_key.png" alt=""></p>
 <p>&nbsp;</p>
 
 ## Installation
