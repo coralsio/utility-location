@@ -3,8 +3,10 @@
 namespace Corals\Utility\Location\DataTables;
 
 use Corals\Foundation\DataTables\BaseDataTable;
+use Corals\Utility\Location\Jobs\GenerateExcelForLocations;
 use Corals\Utility\Location\Models\Location;
 use Corals\Utility\Location\Transformers\LocationTransformer;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Yajra\DataTables\EloquentDataTable;
 
 class LocationsDataTable extends BaseDataTable
@@ -66,5 +68,23 @@ class LocationsDataTable extends BaseDataTable
         $url = url(config('utility-location.models.location.resource_url'));
 
         return ['resource_url' => $url];
+    }
+
+    /**
+     * @param $download
+     * @return ShouldQueue
+     */
+    protected function getCSVGeneratorJob($download)
+    {
+        $columns = $this->getExportColumnsFromBuilder();
+
+        return new GenerateExcelForLocations(
+            get_class($this),
+            $this->scopes,
+            $columns,
+            $this->getTableId(),
+            user(),
+            $download
+        );
     }
 }
