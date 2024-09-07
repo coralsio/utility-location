@@ -19,8 +19,18 @@ return [
     ],
     'location-headers' => [
         'name' => 'location name',
+        'slug' => 'location slug',
+        'status' => 'location status',
         'address' => 'location address',
         'lat' => 'location latitude',
-        'long' => 'location longitude'
+        'long' => 'location longitude',
+        'zip' => 'location zip',
+        'city' => 'location city',
+        'state' => 'location state',
+        'country' => 'location country',
+        'module'=>'module',
+        'type' => 'location type',
+        'parent_id' => 'parent location',
+        'description' => 'location description',
     ],
 ];

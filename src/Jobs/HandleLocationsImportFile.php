@@ -81,9 +81,19 @@ class HandleLocationsImportFile implements ShouldQueue
     {
         return array_filter([
             'name' => data_get($record, 'name'),
+            'slug' => data_get($record, 'slug'),
+            'status' => data_get($record, 'status'),
             'address' => data_get($record, 'address'),
             'lat' => data_get($record, 'lat'),
             'long' => data_get($record, 'long'),
+            'zip' => data_get($record, 'zip'),
+            'city' => data_get($record, 'city'),
+            'state' => data_get($record, 'state'),
+            'country' => data_get($record, 'country'),
+            'module' => data_get($record, 'module'),
+            'type' => data_get($record, 'type'),
+            'parent_id' => data_get($record, 'parent_id'),
+            'description' => data_get($record, 'description'),
         ]);
     }
 
@@ -93,11 +103,25 @@ class HandleLocationsImportFile implements ShouldQueue
 
     protected function getValidationRules($data): array
     {
+        $locationTypes = join(',', array_keys(\Settings::get('utility_location_types', [])));
+        $status = join(',', array_keys(trans('Corals::attributes.status_options')));
+        $modules = join(',', array_keys(\Utility::getUtilityModules()));
+
         return [
             'name' => 'required|max:191|unique:utility_locations,name',
+            'slug' => 'nullable',
+            'status' => 'required|in:' . $status,
             'address' => 'required|max:191',
             'lat' => 'required|max:191',
             'long' => 'required|max:191',
+            'zip' => 'nullable',
+            'city' => 'nullable',
+            'state' => 'nullable',
+            'country' => 'nullable',
+            'module' => 'nullable|in:' . $modules,
+            'type' => 'nullable|in:' . $locationTypes,
+            'parent_id' => 'nullable|exists:utility_list_of_values,id',
+            'description' => 'nullable',
         ];
     }
 }

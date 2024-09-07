@@ -88,7 +88,7 @@ class GenerateExcelForLocations implements ShouldQueue
             $writer = Writer::createFromPath($filePath, 'w+')
                 ->setDelimiter(config('corals.csv_delimiter', ','));
 
-            $headers = trans("utility-location::import.location-headers");
+            $headers = array_merge(['id' => 'location id'], trans("utility-location::import.location-headers"));
 
             $writer->insertOne(array_keys($headers));
 
@@ -96,10 +96,21 @@ class GenerateExcelForLocations implements ShouldQueue
                 foreach ($data as $location) {
                     try {
                         $locationExportData = [
+                            'id' => $location->id,
                             'name' => $location->name,
+                            'slug' => $location->slug,
+                            'status' => $location->status,
                             'address' => $location->address,
                             'lat' => $location->lat,
                             'long' => $location->long,
+                            'zip' => $location->zip,
+                            'city' => $location->city,
+                            'state' => $location->state,
+                            'country' => $location->country,
+                            'module' => $location->module,
+                            'type' => $location->type,
+                            'parent_id' => $location->parent_id,
+                            'description' => $location->description,
                         ];
 
                         $writer->insertOne($locationExportData);
