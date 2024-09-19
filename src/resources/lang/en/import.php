@@ -1,5 +1,11 @@
 <?php
 
+$locationTypes = \Settings::get('utility_location_types', []);
+$types = [];
+foreach ($locationTypes as $locationType) {
+    $types [] = '<b>' . $locationType . '</b>';
+}
+
 return [
     'labels' => [
         'import' => '<i class="fa fa-th fa-th"></i> Import',
@@ -18,19 +24,19 @@ return [
         'path_not_exist' => 'path not exist.',
     ],
     'location-headers' => [
-        'name' => 'location name',
-        'slug' => 'location slug',
-        'status' => 'location status',
-        'address' => 'location address',
-        'lat' => 'location latitude',
-        'long' => 'location longitude',
-        'zip' => 'location zip',
-        'city' => 'location city',
-        'state' => 'location state',
-        'country' => 'location country',
-        'module'=>'module',
-        'type' => 'location type',
-        'parent_id' => 'parent location',
-        'description' => 'location description',
+        'name' => '<sup class="required-asterisk">*</sup>name. If there is a matching stored record, it will be modified.',
+        'slug' => 'slug',
+        'status' => '<sup class="required-asterisk">*</sup>status. Valid values: <b>active</b>, <b>inactive</b>',
+        'address' => '<sup class="required-asterisk">*</sup>address',
+        'lat' => '<sup class="required-asterisk">*</sup>latitude',
+        'long' => '<sup class="required-asterisk">*</sup>longitude',
+        'zip' => 'zip',
+        'city' => 'city',
+        'state' => 'state',
+        'country' => 'country',
+        'module' => 'module',
+        'type' => 'type e.g. ' . implode(', ', $types),
+        'parent_id' => 'parent location. <div><b>Source: </b>Locations</div>',
+        'description' => 'description',
     ],
 ];
