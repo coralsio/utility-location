@@ -36,7 +36,7 @@ return [
         'country' => 'country',
         'module' => 'module',
         'type' => 'type e.g. ' . implode(', ', $types),
-        'parent_id' => 'parent location , source from locations',
+        'parent_id' => 'parent location. <div><b>Source: </b>Locations</div>',
         'description' => 'description',
     ],
 ];
